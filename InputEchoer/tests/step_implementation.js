@@ -38,7 +38,6 @@ step("Open InputEchoer application", async function () {
 });
 
 step("Add text to echo <echotext>",async function(echotext){
-    await focus(textBox('Enter a text to echo'));
     await write(echotext, into(textBox("Enter a text to echo")))
     await click(button("Echo"));
 }
