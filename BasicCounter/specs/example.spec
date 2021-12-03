@@ -1,53 +1,23 @@
-# Getting Started with Gauge
+# Basic Counter Acceptance Test
 
-This is an example markdown specification file.
-Every heading in this file is a scenario.
-Every bulleted point is a step.
 
-To execute this specification, use
-	npm test
 
-This is a context step that runs before every scenario
-* Open todo application
+* Open Basic Counter application
 
-## Display number of items
-* Add task "first task"
-* Must display "1 item left"
-* Add task "second task"
-* Must display "2 items left"
+## Increase Counter Test
+* Increase amount of "5"
+* Must display "5"
 
-## Must list only active tasks
-* Add tasks 
+## Decrease Counter Test
+* Increase amount of "10"
+* Decrease amount of "2"
+* Must display "8"
 
-   |description|
-   |-----------|
-   |first task |
-   |second task|
-   |third task |
-   |fourth task|
-   |fifth task |
+--## Reset Counter Test
+--* Increase amount of "10"
+--* Decrease amount of "3"
+--* Reset all increments-decrements
+--* Must display "0"
 
-* Complete tasks 
 
-   |description|
-   |-----------|
-   |second task|
-   |fifth task |
-* View "Active" tasks
-* Must have 
 
-   |description|
-   |-----------|
-   |first task |
-   |third task |
-   |fourth task|
-* Must not have 
-
-   |description|
-   |-----------|
-   |second task|
-   |fifth task |
-
-A tear down step for every scenario
-___
-* Clear all tasks

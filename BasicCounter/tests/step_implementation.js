@@ -17,7 +17,8 @@ const {
     text,
     into,
     textBox,
-    evaluate
+    evaluate,
+    button
 } = require('taiko');
 const assert = require("assert");
 const headless = process.env.headless_chrome.toLowerCase() === 'true';
@@ -33,15 +34,6 @@ afterSuite(async () => {
 });
 
 // Return a screenshot file name
-gauge.customScreenshotWriter = async function () {
-    const screenshotFilePath = path.join(process.env['gauge_screenshots_dir'],
-        `screenshot-${process.hrtime.bigint()}.png`);
-
-    await screenshot({
-        path: screenshotFilePath
-    });
-    return path.basename(screenshotFilePath);
-};
 
 step("Add task <item>", async (item) => {
     await write(item, into(textBox("What needs to be done?")));
@@ -52,19 +44,6 @@ step("View <type> tasks", async function (type) {
     await click(link(type));
 });
 
-step("Complete tasks <table>", async function (table) {
-    for (var row of table.rows) {
-        await click(checkBox(toLeftOf(row.cells[0])));
-    }
-});
-
-step("Clear all tasks", async function () {
-    await evaluate(() => localStorage.clear());
-});
-
-step("Open todo application", async function () {
-    await goto("todo.taiko.dev");
-});
 
 step("Must not have <table>", async function (table) {
     for (var row of table.rows) {
@@ -76,15 +55,17 @@ step("Must display <message>", async function (message) {
     assert.ok(await text(message).exists(0, 0));
 });
 
-step("Add tasks <table>", async function (table) {
-    for (var row of table.rows) {
-        await write(row.cells[0]);
-        await press('Enter');
+step("Open Basic Counter application", async function() {
+	await goto("localhost:3000/");
+});
+
+step("Increase amount of <repeat_count>", async function(repeat_count) {
+	for(let i = 0 ; i< repeat_count; i++)
+    {
+        await click(button("+"));
     }
 });
 
-step("Must have <table>", async function (table) {
-    for (var row of table.rows) {
-        assert.ok(await text(row.cells[0]).exists());
-    }
+step("Decrease amount of <arg0>", async function(arg0) {
+	throw 'Unimplemented Step';
 });
