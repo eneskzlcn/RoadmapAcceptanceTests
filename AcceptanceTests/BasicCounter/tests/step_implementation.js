@@ -62,10 +62,16 @@ step("Open Basic Counter application <port>", async function(port) {
 step("Increase amount of <repeat_count>", async function(repeat_count) {
 	for(let i = 0 ; i< repeat_count; i++)
     {
-        await click(button("+"));
+        await click(button({id:'incrementBTN'}));
     }
 });
 
 step("Decrease amount of <arg0>", async function(arg0) {
-	throw 'Unimplemented Step';
+	for(let i =0 ; i < arg0; i++)
+    {
+        await click(button({id:'decrementBTN'}));
+    }
+});
+step("Reset all increments-decrements", async function() {
+	await click(button({id:'resetBTN'}));
 });
