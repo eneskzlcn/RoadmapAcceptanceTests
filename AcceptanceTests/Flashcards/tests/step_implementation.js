@@ -81,16 +81,34 @@ afterSuite(async () => {
 //     }
 // });
 
-step("Open Flashcard application on <arg0>", async function(arg0) {
-	throw 'Unimplemented Step';
+step("Open Flashcard application on <port>", async function(port) {
+	await goto("localhost:"+port+"/");
 });
 
 step("Enter a question <question>", async function(question) {
-    //text box start focused
-	await write(question);
-    await press('Tab');
+	await write(question,into(textBox('Question')));
 });
 
 step("Enter a answer <answer>", async function(answer) {
-	throw 'Unimplemented Step';
+await write(answer,into(textBox('Answer')));
 });
+
+step("Add flashcard", async function() {
+	await click('Add');
+});
+step("Must display <question>", async function(question) {
+	await text(question).exists();
+});
+
+step("Pick the flashcard", async function() {
+	await click('Show');
+});
+
+step("Delete all flashcards", async function() {
+	await click('Delete All')
+});
+
+step("Should not display <question>", async function(question) {
+    assert.ok(!await text(question).exists());
+});
+
