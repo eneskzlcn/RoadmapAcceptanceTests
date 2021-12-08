@@ -1,8 +1,6 @@
 # Input Echoer Acceptance Test
 
 
-This is a context step that runs before every scenario
-
 * Open InputEchoer application
 
 ## Add Echo Item

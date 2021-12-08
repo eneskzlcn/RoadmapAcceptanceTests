@@ -35,24 +35,8 @@ afterSuite(async () => {
 
 // Return a screenshot file name
 
-step("Add task <item>", async (item) => {
-    await write(item, into(textBox("What needs to be done?")));
-    await press('Enter');
-});
-
-step("View <type> tasks", async function (type) {
-    await click(link(type));
-});
-
-
-step("Must not have <table>", async function (table) {
-    for (var row of table.rows) {
-        assert.ok(!await text(row.cells[0]).exists(0, 0));
-    }
-});
-
 step("Must display <message>", async function (message) {
-    assert.ok(await text(message).exists(0, 0));
+    assert.ok(await text(message).exists());
 });
 
 step("Open Basic Counter application <port>", async function(port) {

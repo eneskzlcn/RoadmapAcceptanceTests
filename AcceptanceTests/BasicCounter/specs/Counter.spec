@@ -1,8 +1,8 @@
 # Basic Counter Acceptance Test
 
-* Open Basic Counter application "64398"
+* Open Basic Counter application "3000"
 
-## Increase Counter Test
+## Add new Flashcard
 * Increase amount of "3"
 * Must display "3"
 
