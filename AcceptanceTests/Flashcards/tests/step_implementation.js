@@ -100,8 +100,8 @@ step("Must display <question>", async function(question) {
 	await text(question).exists();
 });
 
-step("Pick the flashcard", async function() {
-	await click('Show');
+step("Pick the flashcard of question <question>", async function(question) {
+	await click(text(question));
 });
 
 step("Delete all flashcards", async function() {

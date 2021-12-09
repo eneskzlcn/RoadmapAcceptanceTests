@@ -1,7 +1,7 @@
 # Flashcard Acceptance Test
 
 
-* Open Flashcard application on "60084"
+* Open Flashcard application on "50152"
 
 ## Add New Flashcard
 * Enter a question "What is inside me?"
@@ -13,7 +13,7 @@
 * Enter a question "What is inside me?"
 * Enter a answer "A Hero"
 * Add flashcard
-* Pick the flashcard
+* Pick the flashcard of question "What is inside me?"
 * Must display "A Hero"
 
 ## Delete All Flashcards
