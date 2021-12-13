@@ -1,14 +1,14 @@
 # Shopping Card Acceptance Test
 
 
-* Open Shopping Card Application On "4200"
+* Open Shopping Card Application On "49221"
 
-## Display Current Card Number On Load
-* Must display "5 items"
+## Display Current Card Count On Load
+* Must Display "5 items"
 
 ## Add Product To The Basket
 * Choose The Product "ASUS MG- Laptop"
-* Must display "1" on basket
+* Must Display "1"
 
 ## Display Product In The Basket
 * Choose The Product "ASUS MG- Laptop"

@@ -72,9 +72,34 @@ afterSuite(async () => {
 //         await press('Enter');
 //     }
 // });
+step("Open Shopping Card Application On <port>", async function (port) {
+    await goto("localhost:"+port+"/")
+});
 
-// step("Must have <table>", async function (table) {
-//     for (var row of table.rows) {
-//         assert.ok(await text(row.cells[0]).exists());
-//     }
-// });
+step("Must Display <message>", async function (message) {
+    assert.ok(await text(message).exists(0,0));
+});
+step("Must Not Display <message>", async function (message) {
+    assert.ok(!await text(message).exists());
+});
+
+step("Choose The Product <product_name>", async function (product_name) {
+    await click(text(product_name));
+});
+
+step("Go To The Basket", async function () {
+    await click(link({id:'basketLink'}));
+
+});
+step("Increase Number Of Product <product_name>", async function (product_name) {
+    await click(button({value:"increment"},toRightOf(text(product_name))))
+});
+step("Decrease Number Of Product <product_name>", async function (product_name) {
+    await click(button({value:"decrement"},toRightOf(text(product_name))))
+});
+step("Remove Product <ASUS MG- Laptop>", async function (product_name) {
+    await click(button({value:"remove"},toRightOf(text(product_name))))
+});
+step("Clear All Products", async function () {
+    await click(button({id:"clearProductsBTN"}))
+});
