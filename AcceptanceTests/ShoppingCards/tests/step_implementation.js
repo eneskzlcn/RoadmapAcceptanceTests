@@ -55,14 +55,15 @@ step("Go To The Basket", async function () {
 
 });
 step("Increase Number Of Product", async function () {
-    await click(text('+'));
+    //await click(text('+'));
+    await(click(button({id:'Inc0'})))
 });
 step("Decrease Number Of Product", async function () {
-    await click(text('-'));
+    await(click(button({id:'Dec0'})))
 });
 step("Remove Product", async function () {
-    await click(text('0'));
+    await(click(button({id:'Rem0'})))
 });
 step("Clear All Products", async function () {
-    await click(text('Clear Basket'));
+    await(click(button({id:'clearBasket'})))
 });

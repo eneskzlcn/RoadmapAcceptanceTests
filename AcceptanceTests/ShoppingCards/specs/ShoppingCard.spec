@@ -1,7 +1,7 @@
 # Shopping Card Acceptance Test
 
 
-* Open Shopping Card Application On "3000"
+* Open Shopping Card Application On "50288"
 
 ## Display Current Card Count On Load
 * Must Display "5 items"
