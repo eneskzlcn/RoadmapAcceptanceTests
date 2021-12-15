@@ -43,11 +43,11 @@ step("Enter a email <email>", async function(email) {
 });
 
 step("Enter a message <message>", async function(message) {
-	await write(answer,into(textBox('Message')));
+	await write(message,into(textBox('Message')));
 });
 
 step("Submit", async function() {
-	await click(button({id:'submit'}))
+	await click(button({id:'submitBTN'}))
 });
 step("Must display <message>", async function(message) {
 	await assert.ok(await text(message).exists());
